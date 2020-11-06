@@ -2,21 +2,8 @@
 
 """Tests for `quica` package."""
 
-import pytest
-
-
-from quica import quica
 from quica.measures.irr import *
 from quica.dataset.dataset import IRRDataset
-
-@pytest.fixture
-def response():
-    """Sample pytest fixture.
-
-    See more at: http://doc.pytest.org/en/latest/fixture.html
-    """
-    # import requests
-    # return requests.get('https://github.com/audreyr/cookiecutter-pypackage')
 
 def test_complete_agreement():
     coder_1 = [0, 1, 0, 1, 0, 1]
@@ -32,6 +19,7 @@ def test_complete_agreement():
     kri = Krippendorff()
     cohen = CohensK()
     fliess = FleissK()
+    scotts = ScottsPI()
 
     assert kri.compute_irr(agreeing_dataset) == 1
     assert cohen.compute_irr(agreeing_dataset) == 1
@@ -39,4 +27,6 @@ def test_complete_agreement():
     assert cohen.compute_irr(disagreeing_dataset) < 1
     assert fliess.compute_irr(disagreeing_dataset) < 1
     assert fliess.compute_irr(agreeing_dataset) == 1
+    assert scotts.compute_irr(agreeing_dataset) == 1
+    assert scotts.compute_irr(disagreeing_dataset) < 1
 
