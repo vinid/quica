@@ -4,6 +4,7 @@
 
 from quica.measures.irr import *
 from quica.dataset.dataset import IRRDataset
+from quica.quica import Quica
 
 def test_complete_agreement():
     coder_1 = [0, 1, 0, 1, 0, 1]
@@ -30,3 +31,11 @@ def test_complete_agreement():
     assert scotts.compute_irr(agreeing_dataset) == 1
     assert scotts.compute_irr(disagreeing_dataset) < 1
 
+def test_quica_complete():
+    coder_1 = [0, 1, 0, 1, 0, 1]
+    coder_3 = [0, 1, 0, 1, 0, 0]
+    disagreeing_coders = [coder_1, coder_3]
+    disagreeing_dataset = IRRDataset(disagreeing_coders)
+
+    quica = Quica()
+    print(quica.get_results(disagreeing_dataset))
