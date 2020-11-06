@@ -31,9 +31,12 @@ def test_complete_agreement():
 
     kri = Krippendorff()
     cohen = CohensK()
+    fliess = FleissK()
 
     assert kri.compute_irr(agreeing_dataset) == 1
     assert cohen.compute_irr(agreeing_dataset) == 1
     assert cohen.compute_irr(disagreeing_dataset) < 1
     assert cohen.compute_irr(disagreeing_dataset) < 1
+    assert fliess.compute_irr(disagreeing_dataset) < 1
+    assert fliess.compute_irr(agreeing_dataset) == 1
 
