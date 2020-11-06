@@ -18,7 +18,7 @@ class Quica:
 
     def get_results(self, dataset: IRRDataset):
         measures = [Krippendorff(), FleissK(), ScottsPI()]
-        names = ["krippendorf", "fleiss", "scotts"]
+        names = ["krippendorff", "fleiss", "scotts"]
 
         if dataset.coders == 2:
             measures.append(CohensK())

@@ -47,6 +47,13 @@ Get Quick Agreement
     print(quica.get_latex(disagreeing_dataset))
 
 
+    Out[4]:
+                    score
+    names
+    krippendorff  0.685714
+    fleiss        0.666667
+    scotts        0.657143
+    cohen         0.666667
 
 Features
 --------
