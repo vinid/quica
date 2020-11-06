@@ -1,6 +1,6 @@
-=====
-quica
-=====
+======================================
+Quick Inter Coder Agreement in Python
+======================================
 
 
 .. image:: https://img.shields.io/pypi/v/quica.svg
