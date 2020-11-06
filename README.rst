@@ -32,6 +32,7 @@ Get Quick Agreement
 -------------------
 
 .. code-block:: python
+
     from quica.measures.irr import *
     from quica.dataset.dataset import IRRDataset
     from quica.quica import Quica
@@ -51,6 +52,7 @@ Features
 --------
 
 .. code-block:: python
+
     from quica.measures.irr import *
     from quica.dataset.dataset import IRRDataset
     from quica.quica import Quica
