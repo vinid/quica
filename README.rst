@@ -42,13 +42,27 @@ Get Quick Agreement
     print(quica.get_latex(disagreeing_dataset))
 
 
-    Out[4]:
+    Out[1]:
                     score
     names
     krippendorff  0.685714
     fleiss        0.666667
     scotts        0.657143
     cohen         0.666667
+
+    Out[2]:
+
+    \begin{tabular}{lr}
+    \toprule
+    {} &     score \\
+    names       &           \\
+    \midrule
+    krippendorf &  0.685714 \\
+    fleiss      &  0.666667 \\
+    scotts      &  0.657143 \\
+    cohen       &  0.666667 \\
+    \bottomrule
+    \end{tabular}
 
 Features
 --------
