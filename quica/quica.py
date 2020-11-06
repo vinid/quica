@@ -8,11 +8,13 @@ class Quica:
     def __init__(self):
         pass
 
-    def save_to_csv(self, dataset: IRRDataset):
-        pass
+    def save_to_csv(self, dataset: IRRDataset, csv_path):
+        df = self.get_results(dataset)
+        df.to_csv(csv_path)
 
     def get_latex(self, dataset: IRRDataset):
-        pass
+        df = self.get_results(dataset)
+        return df.to_latex()
 
     def get_results(self, dataset: IRRDataset):
         measures = [Krippendorff(), FleissK(), ScottsPI()]
