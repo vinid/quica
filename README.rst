@@ -32,6 +32,9 @@ Get Quick Agreement
 -------------------
 
 .. code-block:: python
+    from quica.measures.irr import *
+    from quica.dataset.dataset import IRRDataset
+    from quica.quica import Quica
 
     coder_1 = [0, 1, 0, 1, 0, 1]
     coder_3 = [0, 1, 0, 1, 0, 0]
@@ -48,6 +51,9 @@ Features
 --------
 
 .. code-block:: python
+    from quica.measures.irr import *
+    from quica.dataset.dataset import IRRDataset
+    from quica.quica import Quica
 
     coder_1 = [0, 1, 0, 1, 0, 1]
     coder_2 = [0, 1, 0, 1, 0, 1]
