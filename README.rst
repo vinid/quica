@@ -8,17 +8,12 @@ quica is a tool to run inter coder agreement pipelines in an easy and effective 
 .. image:: https://img.shields.io/pypi/v/quica.svg
         :target: https://pypi.python.org/pypi/quica
 
-.. image:: https://img.shields.io/travis/vinid/quica.svg
-        :target: https://travis-ci.com/vinid/quica
+.. image:: https://github.com/vinid/quica/workflows/Python%20package/badge.svg
+        :target: https://github.com/vinid/quica/actions
 
 .. image:: https://readthedocs.org/projects/quica/badge/?version=latest
         :target: https://quica.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
-
-
-.. image:: https://pyup.io/repos/github/vinid/quica/shield.svg
-     :target: https://pyup.io/repos/github/vinid/quica/
-     :alt: Updates
 
 
 
