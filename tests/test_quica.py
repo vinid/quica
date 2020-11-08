@@ -57,9 +57,4 @@ def test_quica_complete():
     quica = Quica(dataframe=dataframe)
     (quica.get_results())
 
-def test_quica_excel():
 
-    dataframe = pd.read_excel("./data.xls")
-    quica = Quica(dataframe=dataframe)
-    print(dataframe)
-    (quica.get_results())
