@@ -115,6 +115,8 @@ class Mace(object):
         self.gold_label_marginals = np.zeros(
             shape=(self.num_instances, self.num_labels)
         )
+
+
         self.label_preference_expected_counts = np.zeros(
             shape=(self.num_annotators, self.num_labels)
         )
@@ -180,6 +182,8 @@ class Mace(object):
                         annotation = self.labels[d][a]
                         spam_value = self.competence[a][1] \
                             if l == annotation else 0.0
+
+
                         gold_label_marginal *= self.competence[a][0] * \
                                                self.label_preference[a][annotation] + \
                                                spam_value

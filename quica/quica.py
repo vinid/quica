@@ -25,8 +25,8 @@ class Quica:
         return df.to_latex()
 
     def get_results(self):
-        measures = [Krippendorff(), FleissK(), ScottsPI(), RawAgreement(), MaceIRR()]
-        names = ["Krippendorff's alpha", "Scotts'Kappa", "Raw Agreement", "MACE"]
+        measures = [Krippendorff(), ScottsPI(), RawAgreement(), MaceIRR()]
+        names = ["Krippendorff's Alpha", "Scotts' Kappa", "Raw Agreement", "MACE"]
 
         if self.dataset.coders == 2:
             measures.append(CohensK())
@@ -39,9 +39,9 @@ class Quica:
         for measure in measures:
             results.append(measure.compute_irr(self.dataset))
 
-        data = pd.DataFrame({"names": names, "score": results})
-        data.index = data["names"]
-        del data["names"]
+        data = pd.DataFrame({"measure": names, "score": results})
+        data.index = data["measure"]
+        del data["measure"]
         return data
 
 

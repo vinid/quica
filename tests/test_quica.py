@@ -46,6 +46,7 @@ def test_quica_complete():
     dataframe = pd.DataFrame({"coder1" : coder_1,
                   "coder3" : coder_3})
 
+
     disagreeing_coders = [coder_1, coder_3]
     disagreeing_dataset = IRRDataset(disagreeing_coders)
 
@@ -54,4 +55,11 @@ def test_quica_complete():
     (quica.get_results())
 
     quica = Quica(dataframe=dataframe)
+    (quica.get_results())
+
+def test_quica_excel():
+
+    dataframe = pd.read_excel("/home/vinid/Downloads/data.xls")
+    quica = Quica(dataframe=dataframe)
+    print(dataframe)
     (quica.get_results())

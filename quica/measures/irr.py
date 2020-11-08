@@ -95,7 +95,7 @@ class MaceIRR(IRRMeasure):
 
     def compute_irr(self, dataset):
 
-        dataframe = pd.DataFrame(data=dataset.data).applymap(lambda x : str(x))
+        dataframe = pd.DataFrame(data=dataset.data.T).applymap(lambda x : str(x))
 
         algo = Mace(
             inputfile=dataframe,
