@@ -7,7 +7,9 @@ from quica.dataset.dataset import IRRDataset
 from quica.quica import Quica
 import pandas as pd
 
+
 def test_complete_agreement():
+
     coder_1 = [0, 1, 0, 1, 0, 1]
     coder_2 = [0, 1, 0, 1, 0, 1]
     coder_3 = [0, 1, 0, 1, 0, 0]
@@ -22,6 +24,7 @@ def test_complete_agreement():
     cohen = CohensK()
     fliess = FleissK()
     scotts = ScottsPI()
+    raw = RawAgreement()
 
     assert kri.compute_irr(agreeing_dataset) == 1
     assert cohen.compute_irr(agreeing_dataset) == 1
@@ -31,9 +34,11 @@ def test_complete_agreement():
     assert fliess.compute_irr(agreeing_dataset) == 1
     assert scotts.compute_irr(agreeing_dataset) == 1
     assert scotts.compute_irr(disagreeing_dataset) < 1
+    assert raw.compute_irr(disagreeing_dataset) < 1
+    assert raw.compute_irr(agreeing_dataset) == 1
+
 
 def test_quica_complete():
-
 
     coder_1 = [0, 1, 0, 1, 0, 1]
     coder_3 = [0, 1, 0, 1, 0, 0]

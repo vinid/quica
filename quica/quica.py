@@ -25,8 +25,8 @@ class Quica:
         return df.to_latex()
 
     def get_results(self):
-        measures = [Krippendorff(), FleissK(), ScottsPI()]
-        names = ["krippendorff", "fleiss", "scotts"]
+        measures = [Krippendorff(), FleissK(), ScottsPI(), RawAgreement()]
+        names = ["krippendorff", "fleiss", "scotts", "raw"]
 
         if self.dataset.coders == 2:
             measures.append(CohensK())

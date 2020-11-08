@@ -3,6 +3,9 @@ import krippendorff
 from quica.dataset.dataset import IRRDataset
 from sklearn.metrics import cohen_kappa_score
 from nltk import agreement
+from itertools import combinations
+from sklearn.metrics import accuracy_score
+import numpy as np
 
 class IRRMeasure(ABC):
 
@@ -21,7 +24,7 @@ class Krippendorff(IRRMeasure):
     def compute_irr(self, dataset: IRRDataset):
         return krippendorff.alpha(dataset.data)
 
-class CohensK:
+class CohensK(IRRMeasure):
     def __init__(self):
         super().__init__()
 
@@ -33,10 +36,12 @@ class CohensK:
         return cohen_kappa_score(dataset.get_coder(0), dataset.get_coder(1))
 
 
-class FleissK():
+class FleissK(IRRMeasure):
     """
     taking strong inspiration from: https://learnaitech.com/how-to-compute-inter-rater-reliablity-metrics-cohens-kappa-fleisss-kappa-cronbach-alpha-kripndorff-alpha-scotts-pi-inter-class-correlation-in-python/
     """
+    def __init__(self):
+        super().__init__()
 
     def compute_irr(self, dataset: IRRDataset):
 
@@ -51,10 +56,12 @@ class FleissK():
 
         return ratingtask.multi_kappa()
 
-class ScottsPI():
+class ScottsPI(IRRMeasure):
     """
     taking strong inspiration from: https://learnaitech.com/how-to-compute-inter-rater-reliablity-metrics-cohens-kappa-fleisss-kappa-cronbach-alpha-kripndorff-alpha-scotts-pi-inter-class-correlation-in-python/
     """
+    def __init__(self):
+        super().__init__()
 
     def compute_irr(self, dataset: IRRDataset):
 
@@ -68,3 +75,19 @@ class ScottsPI():
         ratingtask = agreement.AnnotationTask(data=formatted_codes)
 
         return ratingtask.pi()
+
+class RawAgreement(IRRMeasure):
+
+    def __init__(self):
+        super().__init__()
+
+    def compute_irr(self, dataset: IRRDataset):
+
+        comb = combinations(dataset.data, 2)
+
+        return np.mean([accuracy_score(a,b) for a,b in comb])
+
+
+
+
+

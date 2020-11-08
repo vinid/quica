@@ -133,7 +133,7 @@ Features
     cohen = CohensK()
 
     assert kri.compute_irr(agreeing_dataset) == 1
-    assert cohen.compute_irr(agreeing_dataset) == 1
+    assert kri.compute_irr(agreeing_dataset) == 1
     assert cohen.compute_irr(disagreeing_dataset) < 1
     assert cohen.compute_irr(disagreeing_dataset) < 1
 
