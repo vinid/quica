@@ -54,13 +54,14 @@ This is the expected output:
 
 .. code-block:: python
 
-
     Out[1]:
-                    score
+                 score
     names
     krippendorff  0.685714
     fleiss        0.666667
     scotts        0.657143
+    raw           0.833333
+    mace          0.426531
     cohen         0.666667
 
 It was pretty easy to get all the scores, right? What if we do not have a pandas dataframe? what if we want to directly get
@@ -68,20 +69,20 @@ the latex table to put into the paper? worry not, my friend: it's easier done th
 
 .. code-block:: python
 
-    from quica.measures.irr import *
-    from quica.dataset.dataset import IRRDataset
-    from quica.quica import Quica
+from quica.measures.irr import *
+from quica.dataset.dataset import IRRDataset
+from quica.quica import Quica
 
-    coder_1 = [0, 1, 0, 1, 0, 1]
-    coder_3 = [0, 1, 0, 1, 0, 0]
+coder_1 = [0, 1, 0, 1, 0, 1]
+coder_3 = [0, 1, 0, 1, 0, 0]
 
-    disagreeing_coders = [coder_1, coder_3]
-    disagreeing_dataset = IRRDataset(disagreeing_coders)
+disagreeing_coders = [coder_1, coder_3]
+disagreeing_dataset = IRRDataset(disagreeing_coders)
 
-    quica = Quica(disagreeing_dataset)
+quica = Quica(disagreeing_dataset)
 
-    print(quica.get_results())
-    print(quica.get_latex())
+print(quica.get_results())
+print(quica.get_latex())
 
 you should get this in output:
 
@@ -89,11 +90,13 @@ you should get this in output:
 
 
     Out[1]:
-                    score
+                 score
     names
     krippendorff  0.685714
     fleiss        0.666667
     scotts        0.657143
+    raw           0.833333
+    mace          0.426531
     cohen         0.666667
 
     Out[2]:
@@ -101,12 +104,14 @@ you should get this in output:
     \begin{tabular}{lr}
     \toprule
     {} &     score \\
-    names       &           \\
+    names        &           \\
     \midrule
-    krippendorf &  0.685714 \\
-    fleiss      &  0.666667 \\
-    scotts      &  0.657143 \\
-    cohen       &  0.666667 \\
+    krippendorff &  0.685714 \\
+    fleiss       &  0.666667 \\
+    scotts       &  0.657143 \\
+    raw          &  0.833333 \\
+    mace         &  0.426531 \\
+    cohen        &  0.666667 \\
     \bottomrule
     \end{tabular}
 
@@ -137,10 +142,22 @@ Features
     assert cohen.compute_irr(disagreeing_dataset) < 1
     assert cohen.compute_irr(disagreeing_dataset) < 1
 
+Supported Algorithms
+--------------------
+
++ **MACE**: Hovy, D., Berg-Kirkpatrick, T., Vaswani, A., & Hovy, E. (2013, June). Learning whom to trust with MACE. In Proceedings of the 2013 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (pp. 1120-1130).
+    + We define the inter coder agreeement as the average competence of the users.
++ Krippendorff's Alpha
++ Cohens' K
++ Fleiss' K
++ Scotts' PI
++ Raw Agreement: Standard Accuracy
+
 Credits
 -------
 
-This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template. Thanks to Pietro Lesci and Dirk Hovy
+for their implementation of MACE.
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage

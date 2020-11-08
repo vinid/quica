@@ -1,5 +1,5 @@
 """Main module."""
-import pandas as pd
+
 from quica.dataset.dataset import IRRDataset
 from quica.measures.irr import *
 import pandas as pd
@@ -25,8 +25,8 @@ class Quica:
         return df.to_latex()
 
     def get_results(self):
-        measures = [Krippendorff(), FleissK(), ScottsPI(), RawAgreement()]
-        names = ["krippendorff", "fleiss", "scotts", "raw"]
+        measures = [Krippendorff(), FleissK(), ScottsPI(), RawAgreement(), MaceIRR()]
+        names = ["krippendorff", "fleiss", "scotts", "raw", "mace"]
 
         if self.dataset.coders == 2:
             measures.append(CohensK())

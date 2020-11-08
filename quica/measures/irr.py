@@ -4,6 +4,7 @@ from quica.dataset.dataset import IRRDataset
 from sklearn.metrics import cohen_kappa_score
 from nltk import agreement
 from itertools import combinations
+from quica.internal.measures import *
 from sklearn.metrics import accuracy_score
 import numpy as np
 
@@ -87,6 +88,29 @@ class RawAgreement(IRRMeasure):
 
         return np.mean([accuracy_score(a,b) for a,b in comb])
 
+class MaceIRR(IRRMeasure):
+
+    def __init__(self):
+        super().__init__()
+
+    def compute_irr(self, dataset):
+
+        dataframe = pd.DataFrame(data=dataset.data).applymap(lambda x : str(x))
+
+        algo = Mace(
+            inputfile=dataframe,
+            priors={},
+            alpha=ALPHA,
+            beta=BETA,
+            em=EM,
+            controls=[],
+            iterations=ITERATIONS,
+            restarts=RESTARTS,
+            threshold=THRESHOLD,
+            smoothing=0,
+        )
+        algo.fit()
+        return np.mean(algo.competence[:, 1])
 
 
 
