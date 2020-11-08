@@ -26,11 +26,14 @@ class Quica:
 
     def get_results(self):
         measures = [Krippendorff(), FleissK(), ScottsPI(), RawAgreement(), MaceIRR()]
-        names = ["krippendorff", "fleiss", "scotts", "raw", "mace"]
+        names = ["Krippendorff's alpha", "Scotts'Kappa", "Raw Agreement", "MACE"]
 
         if self.dataset.coders == 2:
             measures.append(CohensK())
-            names.append("cohen")
+            names.append("Cohen's K")
+        else:
+            measures.append(FleissK())
+            names.append("Fleiss'K")
 
         results = []
         for measure in measures:
