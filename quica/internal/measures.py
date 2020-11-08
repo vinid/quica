@@ -86,14 +86,16 @@ class Mace(object):
         self.smoothing = smoothing
 
         # set label to int dict
-        self.label2int = {value: label for value, label in zip(
+        self.label2int = {label: value for value, label in zip(
             range(self.num_labels), self.unique_labels)}
         self.label2int.update({FILLER: -1})
+        print(self.label2int)
+
 
         # set int to label dict
-        self.int2label = {label: value for label,
+        self.int2label = {value : label for label,
                                            value in self.label2int.items()}
-
+        print(self.int2label)
         # translate input labels to indices
         self.labels = self.inputfile.replace(self.label2int).values.astype(int)
 
