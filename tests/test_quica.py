@@ -59,7 +59,7 @@ def test_quica_complete():
 
 def test_quica_excel():
 
-    dataframe = pd.read_excel("/home/vinid/Downloads/data.xls")
+    dataframe = pd.read_excel("./data.xls")
     quica = Quica(dataframe=dataframe)
     print(dataframe)
     (quica.get_results())
