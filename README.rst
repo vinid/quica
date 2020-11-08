@@ -69,20 +69,20 @@ the latex table to put into the paper? worry not, my friend: it's easier done th
 
 .. code-block:: python
 
-from quica.measures.irr import *
-from quica.dataset.dataset import IRRDataset
-from quica.quica import Quica
+    from quica.measures.irr import *
+    from quica.dataset.dataset import IRRDataset
+    from quica.quica import Quica
 
-coder_1 = [0, 1, 0, 1, 0, 1]
-coder_3 = [0, 1, 0, 1, 0, 0]
+    coder_1 = [0, 1, 0, 1, 0, 1]
+    coder_3 = [0, 1, 0, 1, 0, 0]
 
-disagreeing_coders = [coder_1, coder_3]
-disagreeing_dataset = IRRDataset(disagreeing_coders)
+    disagreeing_coders = [coder_1, coder_3]
+    disagreeing_dataset = IRRDataset(disagreeing_coders)
 
-quica = Quica(disagreeing_dataset)
+    quica = Quica(disagreeing_dataset)
 
-print(quica.get_results())
-print(quica.get_latex())
+    print(quica.get_results())
+    print(quica.get_latex())
 
 you should get this in output:
 
