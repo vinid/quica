@@ -2,8 +2,9 @@
 Quick Inter Coder Agreement in Python
 ======================================
 
-quica is a tool to run inter coder agreement pipelines in an easy and effective ways. Multiple measures are run and results are collected in a single table than can be easily exported in Latex.
-quica supports binay or multiple coders.
+Quica (Quick Inter Coder Agreement in Python) is a tool to run inter coder agreement pipelines in an easy and effective ways.
+Multiple measures are run and results are collected in a single table than can be easily exported in Latex.
+quica supports binary or multiple coders.
 
 .. image:: https://img.shields.io/pypi/v/quica.svg
         :target: https://pypi.python.org/pypi/quica
@@ -18,8 +19,6 @@ quica supports binay or multiple coders.
 .. image:: https://img.shields.io/badge/License-MIT-blue.svg
         :target: https://lbesson.mit-license.org/
         :alt: License
-
-
 
 Quick Inter Coder Agreement in Python
 
@@ -41,9 +40,13 @@ Get Quick Agreement
     disagreeing_coders = [coder_1, coder_3]
     disagreeing_dataset = IRRDataset(disagreeing_coders)
 
-    quica = Quica()
-    print(quica.get_results(disagreeing_dataset))
-    print(quica.get_latex(disagreeing_dataset))
+    quica = Quica(disagreeing_dataset)
+    print(quica.get_results())
+    print(quica.get_latex())
+
+you should get these in output:
+
+.. code-block:: python
 
 
     Out[1]:
