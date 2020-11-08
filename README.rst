@@ -145,8 +145,10 @@ Features
 Supported Algorithms
 --------------------
 
-+ **MACE**: Hovy, D., Berg-Kirkpatrick, T., Vaswani, A., & Hovy, E. (2013, June). Learning whom to trust with MACE. In Proceedings of the 2013 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (pp. 1120-1130).
-    + We define the inter coder agreeement as the average competence of the users.
++ **MACE** (Multi-Annotator Competence Estimation)
+     + Hovy, D., Berg-Kirkpatrick, T., Vaswani, A., & Hovy, E. (2013, June). Learning whom to trust with MACE. In Proceedings of the 2013 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (pp. 1120-1130).
+
+     + We define the inter coder agreeement as the average competence of the users.
 + Krippendorff's Alpha
 + Cohens' K
 + Fleiss' K
