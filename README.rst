@@ -36,7 +36,8 @@ Installation
 Get Quick Agreement
 -------------------
 
-If you already have a python dataframe you can run Quica with few liens of code!
+If you already have a python dataframe you can run Quica with few liens of code! Let's assume you have two
+coders; we will create a pandas dataframe just to show how to use the library.
 
 .. code-block:: python
 
@@ -49,6 +50,22 @@ If you already have a python dataframe you can run Quica with few liens of code!
     quica = Quica(dataframe=dataframe)
     print(quica.get_results())
 
+This is the expected output:
+
+.. code-block:: python
+
+
+    Out[1]:
+                    score
+    names
+    krippendorff  0.685714
+    fleiss        0.666667
+    scotts        0.657143
+    cohen         0.666667
+
+It was pretty easy to get all the scores, right? What if we do not have a pandas dataframe? what if we want to directly get
+the latex table to put into the paper? worry not, my friend: it's easier done than said!
+
 .. code-block:: python
 
     from quica.measures.irr import *
@@ -57,14 +74,16 @@ If you already have a python dataframe you can run Quica with few liens of code!
 
     coder_1 = [0, 1, 0, 1, 0, 1]
     coder_3 = [0, 1, 0, 1, 0, 0]
+
     disagreeing_coders = [coder_1, coder_3]
     disagreeing_dataset = IRRDataset(disagreeing_coders)
 
     quica = Quica(disagreeing_dataset)
+
     print(quica.get_results())
     print(quica.get_latex())
 
-you should get these in output:
+you should get this in output:
 
 .. code-block:: python
 
