@@ -6,7 +6,6 @@ from quica.measures.irr import *
 from quica.dataset.dataset import IRRDataset
 from quica.quica import Quica
 import pandas as pd
-from pandas._testing import assert_frame_equal
 
 def test_complete_agreement():
     coder_1 = [0, 1, 0, 1, 0, 1]

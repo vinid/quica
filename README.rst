@@ -26,8 +26,28 @@ Quick Inter Coder Agreement in Python
 * Free software: MIT license
 * Documentation: https://quica.readthedocs.io.
 
+Installation
+------------
+
+.. code-block:: bash
+
+    pip install -U quica
+
 Get Quick Agreement
 -------------------
+
+If you already have a python dataframe you can run Quica with few liens of code!
+
+.. code-block:: python
+
+    coder_1 = [0, 1, 0, 1, 0, 1]
+    coder_3 = [0, 1, 0, 1, 0, 0]
+
+    dataframe = pd.DataFrame({"coder1" : coder_1,
+                  "coder3" : coder_3})
+
+    quica = Quica(dataframe=dataframe)
+    print(quica.get_results())
 
 .. code-block:: python
 
