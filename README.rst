@@ -33,6 +33,20 @@ Installation
 
     pip install -U quica
 
+Jump start Tutorial
+-------------------
+
+.. |colab1| image:: https://colab.research.google.com/assets/colab-badge.svg
+    :target: https://colab.research.google.com/drive/14x6OOQ09Ojn54mNH8JY83bztrJ61yg0o?usp=sharing
+    :alt: Open In Colab
+
+
++----------------------------------------------------------------+--------------------+
+| Name                                                           | Link               |
++================================================================+====================+
+| Different possible usages of QUICA                             | |colab1|           |
++----------------------------------------------------------------+--------------------+
+
 Get Quick Agreement
 -------------------
 
