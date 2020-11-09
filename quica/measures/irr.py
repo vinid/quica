@@ -23,7 +23,7 @@ class Krippendorff(IRRMeasure):
         super().__init__()
 
     def compute_irr(self, dataset: IRRDataset):
-        return krippendorff.alpha(dataset.data)
+        return krippendorff.alpha(dataset.data, level_of_measurement="nominal")
 
 class CohensK(IRRMeasure):
     def __init__(self):
