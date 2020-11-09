@@ -37,7 +37,8 @@ Get Quick Agreement
 -------------------
 
 If you already have a python dataframe you can run Quica with few liens of code! Let's assume you have two
-coders; we will create a pandas dataframe just to show how to use the library.
+coders; we will create a pandas dataframe just to show how to use the library. As for now, we support only integer values
+and we still have not included weighting.
 
 .. code-block:: python
 
