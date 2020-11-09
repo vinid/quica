@@ -44,7 +44,7 @@ and we still have not included weighting.
 
     from quica.quica import Quica
     import pandas as pd
-    
+
     coder_1 = [0, 1, 0, 1, 0, 1]
     coder_3 = [0, 1, 0, 1, 0, 0]
 
