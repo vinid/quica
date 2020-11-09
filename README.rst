@@ -42,6 +42,9 @@ and we still have not included weighting.
 
 .. code-block:: python
 
+    from quica.quica import Quica
+    import pandas as pd
+    
     coder_1 = [0, 1, 0, 1, 0, 1]
     coder_3 = [0, 1, 0, 1, 0, 0]
 
