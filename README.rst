@@ -85,7 +85,7 @@ the latex table to put into the paper? worry not, my friend: it's easier done th
     print(quica.get_results())
     print(quica.get_latex())
 
-you should get this in output:
+you should get this in output, note that the latex table requires the booktabs package:
 
 .. code-block:: python
 
