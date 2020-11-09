@@ -3,7 +3,7 @@ Quick Inter Coder Agreement in Python
 ======================================
 
 
-Quica (Quick Inter Coder Agreement in Python) is a tool to run inter coder agreement pipelines in an easy and effective ways.
+Quica (Quick Inter Coder Agreement in Python) is a tool to run inter coder agreement pipelines in an easy and effective way.
 Multiple measures are run and results are collected in a single table than can be easily exported in Latex.
 quica supports binary or multiple coders.
 
